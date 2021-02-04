@@ -8,7 +8,7 @@ function BookInfo() {
 
     return (
         <main className="background-dark">
-            <div class="book-info">
+            <div className="book-info">
                 <header>
                     <a href="#" className="back" onClick={ () => history.push('/') }>&#8592;</a>
                 </header>
