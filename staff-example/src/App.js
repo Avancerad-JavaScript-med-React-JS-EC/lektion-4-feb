@@ -1,6 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
 
+import Staff from './components/Staff';
+import Info from './components/Info';
 /**
  * En meny - komponent till vänster som innehåller namn
  * En info - komponent som visar upp detaljerad info om den anställda
@@ -12,22 +14,13 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      {/* Denna komponent (Staff) ligger utanför routern och är alltid synlig */}
+      <Staff />
+      <Switch>
+        <Route path="/:id" component={ Info } />
+      </Switch>
+    </section>
   );
 }
 
